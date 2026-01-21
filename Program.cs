@@ -1,11 +1,14 @@
-﻿using System.Diagnostics;
-// Jaden Olvera Lab 2 - Merge Sort
+﻿// Jaden Olvera, 1/20/26, Lab 2: Merge Sort
+using System.Diagnostics;
 
 TestCombineSorted();
 TestMergesort();
+
 // Should only be reachable if the tests have passed.
 Console.WriteLine("Tests passed.");
 
+
+// Methods
 
 // Takes two sorted lists and returns a sorted list that includes all values from a and b
 static int[] CombineSortedArrays(int[] leftArray, int[] rightArray)
@@ -40,6 +43,9 @@ static int[] SortViaMergesort(int[] array)
     return [];
 }
 
+
+// Tests
+
 // Test method for non-Recursive sorted list combine
 static void TestCombineSorted()
 {
@@ -72,12 +78,15 @@ static void TestCombineSorted()
 // Test method for SortViaMergesort
 static void TestMergesort()
 {
+    // Checks if method returns an array that's the same as the known sorted array
     Debug.Assert(Enumerable.SequenceEqual(
         SortViaMergesort([6, 1, -5, 3, 5, 3, 7]),
-        [-5, 1, 3, 3, 5, 6, 7]));
+        [-5, 1, 3, 3, 5, 6, 7]
+        ));
     Debug.Assert(Enumerable.SequenceEqual(
         SortViaMergesort([1, 10, -5, 2, 5, 2, 5, 8]),
-        [-5, 1, 2, 2, 5, 5, 8, 10]));
+        [-5, 1, 2, 2, 5, 5, 8, 10]
+        ));
 
 
 }
