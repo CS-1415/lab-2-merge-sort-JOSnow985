@@ -40,7 +40,15 @@ static int[] CombineSortedArrays(int[] leftArray, int[] rightArray)
 // splits it in half, runs itself on both halves, and returns that combined array
 static int[] SortViaMergesort(int[] array)
 {
-    return [];
+    if (array.Length < 2)
+        return array;
+    else
+    {
+        int middle = array.Length / 2;
+        int[] firstHalf = array[0..middle];
+        int[] secondHalf = array[middle..array.Length];
+        return CombineSortedArrays(SortViaMergesort(firstHalf), SortViaMergesort(secondHalf));
+    }
 }
 
 
