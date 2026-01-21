@@ -95,6 +95,8 @@ static void TestMergesort()
         SortViaMergesort([1, 10, -5, 2, 5, 2, 5, 8]),
         [-5, 1, 2, 2, 5, 5, 8, 10]
         ));
-
-
+    Debug.Assert(Enumerable.SequenceEqual(
+        SortViaMergesort([1, 10, -5, 2, 5, 2, 5, 8, 25, 13, 11, 10, 10, 10, 5, 5, -100]),
+        [-100, -5, 1, 2, 2, 5, 5, 5, 5, 8, 10, 10, 10, 10, 11, 13, 25]
+        ));
 }
