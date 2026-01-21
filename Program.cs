@@ -1,7 +1,8 @@
 ﻿using System.Diagnostics;
 // Jaden Olvera Lab 2 - Merge Sort
 
-CombineSortedTest();
+TestCombineSorted();
+TestMergesort();
 // Should only be reachable if the tests have passed.
 Console.WriteLine("Tests passed.");
 
@@ -32,8 +33,15 @@ static int[] CombineSortedArrays(int[] leftArray, int[] rightArray)
 
 }
 
+// Takes an array and returns that array if array.Length < 2 or 
+// splits it in half, runs itself on both halves, and returns that combined array
+static int[] SortViaMergesort(int[] array)
+{
+    return [];
+}
+
 // Test method for non-Recursive sorted list combine
-static void CombineSortedTest()
+static void TestCombineSorted()
 {
     // Will it combine a and b if a is longer?
     Debug.Assert(Enumerable.SequenceEqual(
@@ -59,4 +67,17 @@ static void CombineSortedTest()
             ),
             [-5, 1, 2, 2, 3, 4, 5, 7, 8, 9, 15, 20, 25]
         ));
+}
+
+// Test method for SortViaMergesort
+static void TestMergesort()
+{
+    Debug.Assert(Enumerable.SequenceEqual(
+        SortViaMergesort([6, 1, -5, 3, 5, 3, 7]),
+        [-5, 1, 3, 3, 5, 6, 7]));
+    Debug.Assert(Enumerable.SequenceEqual(
+        SortViaMergesort([1, 10, -5, 2, 5, 2, 5, 8]),
+        [-5, 1, 2, 2, 5, 5, 8, 10]));
+
+
 }
